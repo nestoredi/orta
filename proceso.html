@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proceso | Orta Muebles</title>
+    <link rel="stylesheet" href="styles/style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container nav-container">
+            <div class="logo">
+                <div class="logo-icon">O</div>
+                <div class="logo-text">
+                    <span class="brand-name">ORTA</span>
+                    <span class="brand-subtitle">Muebles</span>
+                </div>
+            </div>
+            
+            <button class="mobile-menu-btn" aria-label="Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="proceso.html" class="active">Proceso</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="process-page">
+        <div class="container">
+            <header class="process-header">
+                <h1>Proceso de Ingeniería de Prompts</h1>
+                <p>Desglose del trabajo realizado basado en la metodología "Trabajo con prompts.pdf"</p>
+            </header>
+
+            <section class="process-section">
+                <div class="section-title-wrapper">
+                    <div class="step-number">1</div>
+                    <h2>Identidad de Marca & Priming</h2>
+                </div>
+                <div class="card highlight-card">
+                    <p>Siguiendo el <strong>Prompt 5 (Contexto Ampliado)</strong>, se estableció una identidad clara para la IA:</p>
+                    <ul>
+                        <li><strong>Rol:</strong> Estratega creativo especializado en marcas mexicanas y comunicación del Midwest de EE.UU.</li>
+                        <li><strong>Contexto:</strong> Mueblería en San Luis Potosí con más de 30 años de trayectoria.</li>
+                        <li><strong>Objetivo:</strong> Reforzar herencia, calidad y personalización.</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section class="process-section">
+                <div class="section-title-wrapper">
+                    <div class="step-number">2</div>
+                    <h2>Estrategia One-Shot + Trigger</h2>
+                </div>
+                <div class="grid-2">
+                    <div class="card">
+                        <h3>El Disparador (Trigger)</h3>
+                        <p>"Te daré propina si lo haces excelente". Este incentivo psicológico en el prompt busca elevar la calidad de la respuesta del modelo, forzando un razonamiento más profundo.</p>
+                    </div>
+                    <div class="card">
+                        <h3>El Ejemplo (One-Shot)</h3>
+                        <p>Referencia utilizada: <em>"Sólidos en diseño, fuertes en tradición / Built for living, crafted to last"</em>. Esto calibró el tono de voz: robusto, emocional y bilingüe.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="process-section">
+                <div class="section-title-wrapper">
+                    <div class="step-number">3</div>
+                    <h2>Análisis del Modelo (Gemini)</h2>
+                </div>
+                <div class="text-content">
+                    <p>El modelo realizó un proceso de razonamiento interno (Plan & Solve) descomponiendo la solicitud:</p>
+                    <div class="code-block">
+                        <p>1. Deconstruct the Request: Role = Senior Midwest Strategist.</p>
+                        <p>2. Analyze Strengths: 30+ years, custom furniture, Mexican heritage.</p>
+                        <p>3. Define 'Midwest' Lens: Honesty, hard work, practical elegance.</p>
+                        <p>4. Values: Integrity, mastery, tradition.</p>
+                    </div>
+                    <p class="mt-4">Este análisis permitió conectar la calidez de la artesanía mexicana con la búsqueda de durabilidad y honestidad material del mercado objetivo.</p>
+                </div>
+            </section>
+
+            <section class="process-section">
+                <div class="section-title-wrapper">
+                    <div class="step-number">4</div>
+                    <h2>Resultados Visuales</h2>
+                </div>
+                <p class="mb-6">La implementación de este sitio web refleja los valores extraídos del PDF:</p>
+                <div class="grid-3">
+                    <div class="card center-text">
+                        <span class="icon">🎨</span>
+                        <h4>Paleta de Color</h4>
+                        <p class="small-text">Gold & Dark Slate para elegancia y solidez.</p>
+                    </div>
+                    <div class="card center-text">
+                        <span class="icon">🪵</span>
+                        <h4>Texturas</h4>
+                        <p class="small-text">Enfoque en la madera natural y la artesanía.</p>
+                    </div>
+                    <div class="card center-text">
+                        <span class="icon">🤖</span>
+                        <h4>Tecnología</h4>
+                        <p class="small-text">Uso de Gemini Veo para visualizar el futuro del diseño.</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container footer-content">
+            <div class="brand">
+                <div class="logo-text">
+                    <span class="brand-name">ORTA</span>
+                    <span class="brand-subtitle">Muebles</span>
+                </div>
+                <p>Crafted for living, built to last.</p>
+            </div>
+            <div class="copyright">
+                <p>&copy; <span id="year"></span> Nestor Crossa</p>
+                <p class="location">San Luis Potosí, México</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="scripts/app.js"></script>
+</body>
+</html>

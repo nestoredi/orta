@@ -1,0 +1,157 @@
+!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Orta Muebles | Heritage & Design</title>
+    <link rel="stylesheet" href="styles/style.css">
+    
+    <!-- Import Map for Gemini SDK only -->
+    <script type="importmap">
+{
+  "imports": {
+    "@google/genai": "https://esm.run/@google/genai",
+    "react": "https://aistudiocdn.com/react@^19.2.0",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+    "react/": "https://aistudiocdn.com/react@^19.2.0/",
+    "react-router-dom": "https://aistudiocdn.com/react-router-dom@^7.9.6"
+  }
+}
+</script>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container nav-container">
+            <div class="logo">
+                <div class="logo-icon">O</div>
+                <div class="logo-text">
+                    <span class="brand-name">ORTA</span>
+                    <span class="brand-subtitle">Muebles</span>
+                </div>
+            </div>
+            
+            <button class="mobile-menu-btn" aria-label="Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <div class="nav-links">
+                <a href="index.html" class="active">Home</a>
+                <a href="proceso.html">Proceso</a>
+            </div>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <div class="hero-decoration top-left"></div>
+        <div class="hero-decoration bottom-right"></div>
+        <div class="container hero-content">
+            <h1>HERITAGE</h1>
+            <p class="tagline">"Sólidos en diseño, fuertes en tradición"</p>
+            <div class="divider"></div>
+            <p class="description">
+                Orta Muebles se basa en tradiciones ricas. Más de 70 años de historia convertidos en piezas que atestiguan la vida. No es solo decorar una casa, es crear un hogar.
+            </p>
+        </div>
+    </header>
+
+    <section class="essence">
+        <div class="container essence-grid">
+            <div class="essence-card">
+                <h3>Artesanía Experta</h3>
+                <p>Skilled Artisans cuidando cada detalle, desde el aroma del aserrín hasta el acabado final. Una mezcla entre lo antiguo y lo moderno.</p>
+            </div>
+            <div class="essence-card bordered">
+                <h3>Confianza</h3>
+                <p>Muebles que envejecen bien. Testigos silenciosos de nuestras charlas, cafés y vidas. Una inversión en herencia.</p>
+            </div>
+            <div class="essence-card">
+                <h3>Diseño Atemporal</h3>
+                <p>Elegancia limpia y sobria. Piezas robustas pensadas para durar generaciones, adaptadas a la vida contemporánea.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="gallery">
+        <div class="container">
+            <h2 class="section-title">Colección Exclusiva</h2>
+            <div class="photo-grid">
+                <div class="photo-item">
+                    <img src="images/muestra.jpg" alt="Mueble muestra 1" loading="lazy">
+                    <div class="overlay"><span>VER DETALLE</span></div>
+                </div>
+                <div class="photo-item">
+                    <img src="images/muestra1.jpg" alt="Mueble muestra 2" loading="lazy">
+                    <div class="overlay"><span>VER DETALLE</span></div>
+                </div>
+                <div class="photo-item">
+                    <img src="images/muestra 2.jpg" alt="Mueble muestra 3" loading="lazy">
+                    <div class="overlay"><span>VER DETALLE</span></div>
+                </div>
+                <div class="photo-item">
+                    <img src="images/muestra3.jpg" alt="Mueble muestra 4" loading="lazy">
+                    <div class="overlay"><span>VER DETALLE</span></div>
+                </div>
+                <div class="photo-item">
+                    <img src="images/esencia.jpg" alt="Mueble muestra 5" loading="lazy">
+                    <div class="overlay"><span>VER DETALLE</span></div>
+                </div>
+                <div class="photo-item">
+                    <img src="images/logo.jpg" alt="Mueble muestra 6" loading="lazy">
+                    <div class="overlay"><span>VER DETALLE</span></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="video-gen">
+        <div class="container">
+            <div class="video-layout">
+                <div class="video-controls">
+                    <h2>Experiencia Visual Inmersiva</h2>
+                    <p>En Orta Muebles, creemos que cada pieza tiene una historia. Utilizando tecnología de generación de video de vanguardia (Veo), visualizamos el futuro.</p>
+                    
+                    <div class="control-panel">
+                        <h3>Generar Previsualización</h3>
+                        <p class="subtext">Basado en la muestra de madera actual.</p>
+                        
+                        <div class="sample-image-container">
+                            <img id="sample-image" src="https://picsum.photos/seed/cabinet/800/600" crossorigin="anonymous" alt="Sample base">
+                        </div>
+
+                        <button id="generate-btn" class="btn-primary">Generar Video con IA</button>
+                        <p id="status-text" class="status-text"></p>
+                    </div>
+                </div>
+                <div class="video-output">
+                    <div id="video-placeholder" class="placeholder">
+                        <div class="spinner hidden" id="spinner"></div>
+                        <p id="placeholder-text">El video generado aparecerá aquí</p>
+                    </div>
+                    <video id="result-video" controls class="hidden"></video>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container footer-content">
+            <div class="brand">
+                <div class="logo-text">
+                    <span class="brand-name">ORTA</span>
+                    <span class="brand-subtitle">Muebles</span>
+                </div>
+                <p>Crafted for living, built to last.</p>
+            </div>
+            <div class="copyright">
+                <p>&copy; <span id="year"></span> Nestor Crossa</p>
+                <p class="location">San Luis Potosí, México</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="scripts/app.js"></script>
+    <script type="module" src="scripts/gemini.js"></script>
+</body>
+</html>
