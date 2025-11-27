@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Horta Muebles - Heritage</title>
+    <style>
+        /* Importamos fuentes elegantes para coincidir con la descripción "Heritage" */
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lato:wght@300;400&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #1a1816; /* Tono oscuro para resaltar las fotos */
+            color: #f4e9d6; /* Tono crema/madera clara */
+            font-family: 'Lato', sans-serif;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        /* Cabecera y Títulos */
+        header {
+            position: absolute;
+            top: 20px;
+            text-align: center;
+            z-index: 10;
+            opacity: 0;
+            animation: fadeIn 2s forwards;
+        }
+
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            letter-spacing: 2px;
+            margin-bottom: 5px;
+        }
+
+        p.subtitle {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            color: #cbb493; /* Color dorado suave */
+        }
+
+        /* Contenedor del Carrusel */
+        .carousel-container {
+            width: 100%;
+            height: 60vh; /* Altura fija para el carrusel */
+            display: flex;
+            align-items: center;
+            overflow: hidden; /* Oculta lo que se sale de la pantalla */
+            position: relative;
+            background: #111;
+            border-top: 1px solid #333;
+            border-bottom: 1px solid #333;
+        }
+
+        /* La pista que se mueve */
+        .carousel-track {
+            display: flex;
+            height: 100%;
+            /* El ancho se calcula dinámicamente o debe ser muy largo */
+            width: calc(400px * 8); /* 400px aprox por foto * 8 fotos (4 reales + 4 duplicadas) */
+            
+            /* Animación pausada por defecto, se activa con JS */
+            animation: scroll 30s linear infinite;
+            animation-play-state: paused; 
+        }
+
+        .slide {
+            height: 100%;
+            width: 400px; /* Ancho base de cada imagen */
+            flex-shrink: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 0 10px;
+        }
+
+        .slide img {
+            height: 90%;
+            width: 100%;
+            object-fit: cover;
+            border-radius: 4px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            transition: transform 0.3s ease;
+            filter: brightness(0.8) sepia(0.2); /* Efecto vintage/taller */
+        }
+
+        .slide img:hover {
+            transform: scale(1.05);
+            filter: brightness(1) sepia(0);
+        }
+
+        /* La animación de desplazamiento infinito */
+        @keyframes scroll {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                /* Movemos la mitad del ancho total (las primeras 4 fotos) para dar el efecto loop */
+                transform: translateX(calc(-400px * 4)); 
+            }
+        }
+
+        /* Controles de Audio */
+        .audio-control {
+            position: absolute;
+            bottom: 40px;
+            z-index: 20;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+        }
+
+        button#togglePlay {
+            background: transparent;
+            border: 2px solid #cbb493;
+            color: #cbb493;
+            padding: 15px 40px;
+            font-family: 'Playfair Display', serif;
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        button#togglePlay:hover {
+            background: #cbb493;
+            color: #1a1816;
+        }
+
+        .status-text {
+            font-size: 0.8rem;
+            opacity: 0.7;
+            font-style: italic;
+        }
+
+        @keyframes fadeIn {
+            to { opacity: 1; }
+        }
+
+        /* Responsividad para móviles */
+        @media (max-width: 768px) {
+            .carousel-track {
+                width: calc(300px * 8);
+            }
+            .slide {
+                width: 300px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>HORTA MUEBLES</h1>
+        <p class="subtitle">Heritage & Craftsmanship</p>
+    </header>
+
+    <div class="carousel-container">
+        <div class="carousel-track" id="track">
+            <!-- 
+               IMPORTANTE: Para lograr el efecto infinito sin saltos con CSS puro,
+               debemos duplicar las imágenes. Ponemos las 4 originales y luego las repetimos.
+            -->
+            
+            <!-- Grupo 1 (Originales) -->
+            <div class="slide"><img src="images/muestra.jpg" alt="Taller de carpintería 1"></div>
+            <div class="slide"><img src="images/muestra1.jpg" alt="Artesano trabajando"></div>
+            <div class="slide"><img src="images/muestra 2.jpg" alt="Muebles de colores"></div>
+            <div class="slide"><img src="images/muestra3.jpg" alt="Caballo de madera"></div>
+
+            <!-- Grupo 2 (Duplicados para el loop infinito) -->
+             <div class="slide"><img src="images/muestra.jpg" alt="Taller de carpintería 1"></div>
+            <div class="slide"><img src="images/muestra1.jpg" alt="Artesano trabajando"></div>
+            <div class="slide"><img src="images/muestra 2.jpg" alt="Muebles de colores"></div>
+            <div class="slide"><img src="images/muestra3.jpg" alt="Caballo de madera"></div>
+        </div>
+    </div>
+
+    <!-- Elemento de Audio (Oculto visualmente, controlado por JS) -->
+    <audio id="bg-audio" loop>
+        <!-- Reemplaza 'audio.mp3' con el nombre real de tu archivo de audio -->
+        <source src="audio.wav" type="audio/mpeg">
+        Tu navegador no soporta el elemento de audio.
+    </audio>
+
+    <div class="audio-control">
+        <button id="togglePlay">Iniciar Experiencia</button>
+        <span class="status-text" id="statusLabel">Presiona para escuchar</span>
+    </div>
+
+    <script>
+        const audio = document.getElementById('bg-audio');
+        const track = document.getElementById('track');
+        const btn = document.getElementById('togglePlay');
+        const label = document.getElementById('statusLabel');
+        let isPlaying = false;
+
+        btn.addEventListener('click', () => {
+            if (!isPlaying) {
+                // Iniciar Audio
+                audio.play();
+                // Iniciar Animación
+                track.style.animationPlayState = 'running';
+                
+                // Actualizar UI
+                btn.textContent = "Pausar";
+                btn.style.borderColor = "#fff";
+                label.textContent = "Escuchando historia...";
+                isPlaying = true;
+            } else {
+                // Pausar Audio
+                audio.pause();
+                // Pausar Animación (se detiene donde está)
+                track.style.animationPlayState = 'paused';
+                
+                // Actualizar UI
+                btn.textContent = "Continuar";
+                btn.style.borderColor = "#cbb493";
+                label.textContent = "En pausa";
+                isPlaying = false;
+            }
+        });
+
+        // Asegurarnos de que si el audio termina (aunque está en loop), la animación pare (seguridad)
+        audio.onended = () => {
+            track.style.animationPlayState = 'paused';
+            isPlaying = false;
+            btn.textContent = "Reiniciar";
+        };
+    </script>
+</body>
+</html>
