@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Orta Muebles | Elegancia y Diseño Minimalista</title>
+
+    <meta name="description" content="Muebles de diseño exclusivo y minimalista para el hogar de clase media alta en México.">
+    <meta name="keywords" content="muebles, diseño, minimalista, lujo, decoración, San Luis Potosí">
+
+    <!-- Swiper CSS (CDN necesario ya que no hay node_modules local) -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+    <link rel="stylesheet" href="styles/main.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+
+    <meta name="color-scheme" content="light">
+<link rel="stylesheet" href="/index.css">
+</head>
+<body>
+
+    <header class="main-header">
+        <div class="logo">
+            <img src="images/logo.jpg" alt="">
+        </div>
+
+        <nav class="main-nav" aria-label="Navegación principal del sitio">
+            <button class="hamburger-menu" aria-controls="menu-list" aria-expanded="false" aria-label="Abrir menú de navegación">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+            <ul id="menu-list" class="nav-list">
+                <!-- Se llena con JS -->
+            </ul>
+        </nav>
+    </header>
+
+    <main id="main-content">
+
+        <!-- Swiper Container -->
+        <section id="hero-carousel" class="carousel-section swiper" aria-label="Productos destacados y banners promocionales">
+            <div class="swiper-wrapper">
+                <!-- Slides estáticos de ejemplo para el carrusel -->
+                <div class="swiper-slide">
+                    <img src="images/muestra3.jpg" alt="Sala Minimalista" loading="lazy">
+                    <div class="slide-content">
+                        <h2>Elegancia en tu Hogar</h2>
+                        <button class="btn-cta"><a href="productos.html">Ver Catalogo</a></button>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <img src="images/muestra.jpg" alt="Comedor de Madera" loading="lazy">
+                    <div class="slide-content">
+                        <h2>Diseño Natural</h2>
+                        <button class="btn-cta"><a href="productos.html">Catalogo</a></button>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <img src="images/muestra1.jpg" alt="Comedor de Madera" loading="lazy">
+                    <div class="slide-content">
+                        <h2>Diseño Natural</h2>
+                        <button class="btn-cta"><a href="productos.html">Catalogo</a></button>
+                    </div>
+                </div>
+            </div>
+            <!-- Swiper Pagination -->
+            <div class="swiper-pagination"></div>
+        </section>
+
+        <section id="featured-products" class="products-grid" aria-label="Selección de tres productos principales">
+            <!-- Se llena con JS -->
+        </section>
+
+        <section id="secondary-cta" class="cta-banner" aria-label="Invitación a ver el catálogo completo">
+            <div class="cta-content">
+                <h2>Transforma tu Espacio</h2>
+                <p>Descubre nuestra línea exclusiva de temporada.</p>
+                <button class="btn-cta"><a href="productos.html">Catalogo</a></button>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Modal para Información de Productos (Agregado para funcionalidad) -->
+    <div id="product-modal" class="modal" aria-hidden="true">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2 id="modal-title">Título del Producto</h2>
+            <img id="modal-img" src="" alt="">
+            <p id="modal-desc">Descripción detallada...</p>
+            <p id="modal-price" class="price"></p>
+        </div>
+    </div>
+
+    <footer class="main-footer">
+        <div class="footer-content">
+            <p>&copy; 2024 Orta Muebles. Todos los derechos reservados.</p>
+            <div class="social-links">
+                <a href="#">Instagram</a>
+                <a href="#">Facebook</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Swiper JS CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <script src="scripts/main.js"></script>
+<script type="module" src="/index.tsx"></script>
+</body>
+</html>

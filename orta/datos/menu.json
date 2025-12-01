@@ -1,0 +1,6 @@
+[
+    { "titulo": "Inicio", "url": "index.html", "target": "_self" },
+    { "titulo": "Productos", "url": "productos.html", "target": "_self" },
+    { "titulo": "Nosotros", "url": "nosotros.html", "target": "_self" },
+    { "titulo": "Contacto", "url": "contacto.html", "target": "_self" }
+]

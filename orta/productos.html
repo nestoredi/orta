@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catálogo | Orta Muebles</title>
+
+    <meta name="description" content="Explora nuestra colección completa de muebles de diseño minimalista.">
+    
+    <link rel="stylesheet" href="styles/main.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header class="main-header">
+         <div class="logo">
+            <img src="images/logo.jpg" alt="">
+        </div>
+
+        <nav class="main-nav" aria-label="Navegación principal del sitio">
+            <button class="hamburger-menu" aria-controls="menu-list" aria-expanded="false" aria-label="Abrir menú de navegación">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+            <ul id="menu-list" class="nav-list">
+                <!-- Se llena con JS -->
+            </ul>
+        </nav>
+    </header>
+
+    <main id="main-content" style="padding-top: 40px;">
+        <div class="container-width">
+            <h2 style="text-align: center; margin-bottom: 40px;">Nuestra Colección</h2>
+            
+            <!-- Contenedor específico para el catálogo completo -->
+            <section id="full-catalog" class="products-grid" aria-label="Catálogo completo de productos">
+                <!-- Se llena con JS (renderizarCatalogo) -->
+                <p style="text-align:center; width:100%;">Cargando productos...</p>
+            </section>
+        </div>
+    </main>
+
+    <!-- Modal para Información de Productos -->
+    <div id="product-modal" class="modal" aria-hidden="true">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2 id="modal-title"></h2>
+            <img id="modal-img" src="" alt="">
+            <p id="modal-desc"></p>
+            <p id="modal-price" class="price"></p>
+        </div>
+    </div>
+
+    <footer id="footer" class="main-footer">
+        <div class="footer-content">
+            <p>&copy; 2024 Orta Muebles. Todos los derechos reservados.</p>
+            <div class="social-links">
+                <a href="#">Instagram</a>
+                <a href="#">Facebook</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Reutilizamos el mismo script -->
+    <script src="scripts/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,435 @@
+:root {
+    /* 1. PALETA DE COLORES (Contraste AAA Asegurado) */
+    --color-primary: #5D4037; /* Marrón Madera Oscuro */
+    --color-secondary: #E0BA8F; /* Beige */
+    --color-accent: #FFD700; /* Oro */
+    --color-background: #FFFFFF; /* Blanco Puro */
+    --color-text-dark: #333333; /* Gris Oscuro */
+    --color-text-light: #FFFFFF; /* Blanco */
+    --color-overlay: rgba(0, 0, 0, 0.5);
+    --color-input-border: #CCCCCC;
+
+    /* 2. TIPOGRAFÍA */
+    --font-primary: 'Roboto', sans-serif;
+    --font-size-base: 16px;
+
+    /* 3. BREAKPOINTS APROBADOS */
+    --breakpoint-tablet: 768px;
+    --breakpoint-desktop: 1024px;
+}
+
+/* Reseteo básico y Box-Sizing */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Base Mobile-First */
+body {
+    font-family: var(--font-primary);
+    font-size: var(--font-size-base);
+    line-height: 1.6;
+    color: var(--color-text-dark);
+    background-color: var(--color-background);
+    min-height: 100vh;
+    padding-top: 60px; /* Espacio para el header fijo */
+    display: flex;
+    flex-direction: column;
+}
+
+/* Estilo Minimalista para Headings (Roboto Bold) */
+h1, h2, h3 {
+    font-weight: 700;
+    line-height: 1.2;
+    color: var(--color-primary);
+    margin-bottom: 0.5em;
+}
+
+/* Estilo de enlaces */
+a {
+    color: var(--color-primary);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+/* Estilo de Botones (CTA Oro) */
+.btn-cta {
+    background-color: var(--color-accent);
+    color: var(--color-text-dark); /* Alto Contraste con el Oro (AAA) */
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-weight: 700;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    display: inline-block;
+    text-align: center;
+}
+
+.btn-cta:hover {
+    background-color: #e6c200; /* Oro más oscuro en hover */
+    transform: translateY(-2px);
+}
+
+.btn-cta.full-width {
+    width: 100%;
+}
+
+/* Regla para Imágenes: Lazy Loading y Hover */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    /* Efecto de Hover Aprobado */
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+/* Solo aplicar hover a imágenes dentro de cards o links, no todas */
+.product-card img:hover, .swiper-slide img:hover {
+    transform: scale(1.03); /* Ligero Zoom */
+}
+
+/* HEADER FIJO (Mobile-First) */
+.main-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: var(--color-background);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* LOGO */
+.logo img {
+    height:auto;
+    width:250px;
+}
+
+/* MENÚ HAMBURGUESA (Visible por defecto en Mobile) */
+.hamburger-menu {
+    display: flex; /* Visible en móvil */
+    flex-direction: column;
+    justify-content: space-around;
+    width: 30px;
+    height: 25px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+}
+
+.hamburger-menu .bar {
+    width: 100%;
+    height: 3px;
+    background-color: var(--color-primary);
+    border-radius: 10px;
+}
+
+/* LISTA DE NAVEGACIÓN (Oculta por defecto en Mobile) */
+.nav-list {
+    display: none; /* Ocultar en Mobile (se mostrará con JS) */
+    position: absolute;
+    top: 100%; /* Justo debajo del header */
+    left: 0;
+    width: 100%;
+    background-color: var(--color-background);
+    list-style: none;
+    padding: 10px 0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.nav-list.is-open {
+    display: flex;
+    flex-direction: column;
+}
+
+.nav-list li a {
+    display: block;
+    padding: 10px 20px;
+}
+
+/* Link Activo */
+.nav-list li a.active {
+    font-weight: 700;
+    border-bottom: 2px solid var(--color-primary);
+}
+
+/* Swiper / Hero Section Customization */
+.carousel-section {
+    width: 100%;
+    height: 300px; /* Altura móvil */
+}
+
+.swiper-slide {
+    position: relative;
+    overflow: hidden;
+}
+
+.swiper-slide img {
+    width: 100%;
+    height: 130%;
+    object-fit: cover;
+}
+
+.slide-content {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 15px;
+    border-left: 5px solid var(--color-primary);
+}
+
+/* Cards de Productos */
+.product-card {
+    background: #fff;
+    border: 1px solid #eee;
+    padding: 15px;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.product-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    margin-bottom: 15px;
+}
+
+.cta-banner {
+    background-color: var(--color-primary);
+    color: var(--color-text-light);
+    padding: 40px 20px;
+    text-align: center;
+    margin-top: 40px;
+}
+
+.cta-banner h2 {
+    color: var(--color-text-light);
+}
+
+/* Footer */
+.main-footer {
+    background-color: #222;
+    color: #fff;
+    padding: 20px;
+    margin-top: auto;
+    text-align: center;
+}
+
+.social-links a {
+    color: var(--color-accent);
+    margin: 0 10px;
+}
+
+/* Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 2000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: var(--color-overlay);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal.is-visible {
+    display: flex;
+}
+
+.modal-content {
+    background-color: #fefefe;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 90%;
+    max-width: 500px;
+    position: relative;
+    text-align: center;
+}
+
+.close-modal {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    position: absolute;
+    right: 15px;
+    top: 5px;
+}
+
+.close-modal:hover {
+    color: black;
+}
+
+/* Estilos para página Nosotros */
+.about-section {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.about-content {
+    margin-bottom: 20px;
+}
+
+.about-image img {
+    width: 100%;
+    border-radius: 4px;
+}
+
+/* --- NUEVOS ESTILOS: CONTACTO Y GRACIAS --- */
+
+/* Contenedor Contacto */
+.contact-container {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.info-block {
+    margin-bottom: 20px;
+}
+
+.info-block h3 {
+    font-size: 1.1rem;
+    margin-bottom: 5px;
+    color: var(--color-text-dark);
+}
+
+/* Formulario Minimalista */
+.minimal-form {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 4px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 700;
+    font-size: 0.9rem;
+    color: var(--color-primary);
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid var(--color-input-border);
+    background-color: #fff;
+    font-family: inherit;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--color-primary);
+    border-left: 4px solid var(--color-primary);
+}
+
+/* Página de Gracias */
+.thank-you-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 60vh; /* Ocupa buena parte de la pantalla */
+    text-align: center;
+    padding: 20px;
+}
+
+.thank-you-content h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.thank-you-content .actions {
+    margin-top: 40px;
+}
+
+/* 4. Media Queries (Breakpoints Aprobados) */
+
+/* TABLET (A partir de 768px) */
+@media (min-width: 768px) {
+    .main-header {
+        padding: 20px 40px;
+    }
+
+    .carousel-section {
+        height: 400px;
+    }
+
+    /* Grid para Nosotros y Contacto */
+    .about-section, 
+    .contact-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 60px;
+        align-items: start;
+    }
+    
+    .about-content {
+        margin-bottom: 0;
+    }
+    
+    /* En contacto, ponemos el form a la derecha */
+    .contact-info {
+        padding-top: 20px;
+    }
+}
+
+/* DESKTOP (A partir de 1024px) */
+@media (min-width: 1024px) {
+    .hamburger-menu {
+        display: none; 
+    }
+
+    .nav-list {
+        display: flex;
+        position: static;
+        flex-direction: row;
+        width: auto;
+        box-shadow: none;
+        padding: 0;
+    }
+
+    .nav-list li a {
+        padding: 0 15px;
+    }
+
+    .products-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 30px;
+        padding: 60px 40px;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .carousel-section {
+        height: 600px;
+    }
+    
+    .minimal-form {
+        padding: 40px;
+    }
+}
