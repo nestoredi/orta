@@ -37,6 +37,9 @@ body {
     display: flex;
     flex-direction: column;
 }
+main{
+    padding: 10px;
+}
 
 /* Estilo Minimalista para Headings (Roboto Bold) */
 h1, h2, h3 {
@@ -108,7 +111,7 @@ img {
 /* LOGO */
 .logo img {
     height:auto;
-    width:250px;
+    width:150px;
 }
 
 /* MENÚ HAMBURGUESA (Visible por defecto en Mobile) */
