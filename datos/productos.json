@@ -1,0 +1,34 @@
+[
+    {
+        "id": "1",
+        "nombre": "Sofá Modular Venecia",
+        "descripcion_corta": "Diseño italiano en terciopelo beige.",
+        "descripcion_larga": "El Sofá Modular Venecia combina la máxima comodidad con un diseño minimalista. Tapizado en terciopelo de alta calidad resistente a manchas.",
+        "precio": "$25,000 MXN",
+        "imagen": "images/muestra.jpg"
+    },
+    {
+        "id": "2",
+        "nombre": "Mesa de Centro Roble",
+        "descripcion_corta": "Madera maciza con acabados dorados.",
+        "descripcion_larga": "Una pieza central impresionante para cualquier sala de estar. Madera de roble sostenible tratada artesanalmente con incrustaciones de oro.",
+        "precio": "$12,500 MXN",
+        "imagen": "images/muestra1.jpg"
+    },
+    {
+        "id": "3",
+        "nombre": "Sillón Lounge Eames",
+        "descripcion_corta": "Icono del diseño moderno.",
+        "descripcion_larga": "La combinación perfecta de estilo y ergonomía. Piel genuina color marrón oscuro con estructura de madera contrachapada moldeada.",
+        "precio": "$18,900 MXN",
+        "imagen": "images/muestra 2.jpg"
+    },
+    {
+        "id": "3",
+        "nombre": "Sillón Lounge Eames",
+        "descripcion_corta": "Icono del diseño moderno.",
+        "descripcion_larga": "La combinación perfecta de estilo y ergonomía. Piel genuina color marrón oscuro con estructura de madera contrachapada moldeada.",
+        "precio": "$18,900 MXN",
+        "imagen": "images/muestra3.jpg"
+    }
+]
